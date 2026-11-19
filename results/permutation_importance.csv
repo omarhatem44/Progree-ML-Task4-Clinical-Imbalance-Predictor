@@ -1,0 +1,22 @@
+feature,description,importance_mean,importance_sd
+ALTV,Percentage of time with abnormal long-term variability,0.1321,0.0268
+ASTV,Percentage of time with abnormal short-term variability,0.1314,0.0208
+Mean,Histogram mean,0.0554,0.0081
+Median,Histogram median,0.0208,0.0077
+AC,Accelerations per second,0.014,0.0049
+DP,Prolonged decelerations per second,0.0124,0.0047
+UC,Uterine contractions per second,0.0111,0.008
+LB,FHR baseline (beats per minute),0.0083,0.0038
+Mode,Histogram mode,0.0058,0.0049
+MLTV,Mean value of long-term variability,0.0044,0.0026
+FM,Fetal movements per second,0.0021,0.0016
+Variance,Histogram variance,0.0012,0.0028
+Width,Width of the FHR histogram,0.0007,0.0012
+Max,Maximum of the FHR histogram,0.0005,0.0018
+DL,Light decelerations per second,0.0003,0.0004
+DS,Severe decelerations per second,0.0,0.0
+Nzeros,Number of histogram zeros,0.0,0.0
+Min,Minimum of the FHR histogram,-0.0001,0.0019
+Tendency,Histogram tendency,-0.0002,0.0004
+Nmax,Number of histogram peaks,-0.0006,0.0019
+MSTV,Mean value of short-term variability,-0.0011,0.0007

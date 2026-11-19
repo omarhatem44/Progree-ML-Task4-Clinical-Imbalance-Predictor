@@ -1,0 +1,30 @@
+2026-11-19 11:35:10 | INFO | Task 4 | pathologic vs rest | seed=42 | folds=5 | n_iter=30 | precision floor=0.75
+2026-11-19 11:35:10 | INFO | Data: 2126 rows, 13 duplicates removed -> 2113 records, 21 features, 0 missing values
+2026-11-19 11:35:10 | INFO | NSP counts {1: 1646, 2: 292, 3: 175} | pathologic 175 (8.3%) | imbalance 11.1:1
+2026-11-19 11:35:10 | INFO | Split: train 1690 (140 pathologic) | test 423 (35 pathologic)
+2026-11-19 11:35:15 | INFO | CV  SVM           | None          |  42 candidates |    5.2 s | recall 0.871 ± 0.054 | precision 0.906 | F2 0.877 | best {'C': 30, 'gamma': 'scale'}
+2026-11-19 11:35:20 | INFO | CV  SVM           | Class weights |  42 candidates |    4.3 s | recall 0.907 ± 0.020 | precision 0.810 | F2 0.885 | best {'C': 30, 'gamma': 'scale'}
+2026-11-19 11:35:26 | INFO | CV  SVM           | SMOTE         |  42 candidates |    6.7 s | recall 0.907 ± 0.041 | precision 0.752 | F2 0.870 | best {'C': 30, 'gamma': 0.01}
+2026-11-19 11:36:07 | INFO | CV  Random Forest | None          |  30 candidates |   41.0 s | recall 0.907 ± 0.041 | precision 0.929 | F2 0.911 | best {'n_estimators': 200, 'min_samples_leaf': 1, 'max_features': 0.5, 'max_depth': 12}
+2026-11-19 11:36:54 | INFO | CV  Random Forest | Class weights |  30 candidates |   46.5 s | recall 0.929 ± 0.025 | precision 0.828 | F2 0.906 | best {'n_estimators': 400, 'min_samples_leaf': 8, 'max_features': 0.3, 'max_depth': None}
+2026-11-19 11:37:58 | INFO | CV  Random Forest | SMOTE         |  30 candidates |   64.4 s | recall 0.929 ± 0.025 | precision 0.881 | F2 0.918 | best {'n_estimators': 200, 'min_samples_leaf': 4, 'max_features': 0.3, 'max_depth': None}
+2026-11-19 11:38:04 | INFO | CV  XGBoost       | None          |  30 candidates |    6.1 s | recall 0.914 ± 0.032 | precision 0.942 | F2 0.919 | best {'subsample': 1.0, 'n_estimators': 200, 'min_child_weight': 1, 'max_depth': 2, 'learning_rate': 0.1, 'colsample_bytree': 0.6}
+2026-11-19 11:38:11 | INFO | CV  XGBoost       | Class weights |  30 candidates |    6.8 s | recall 0.943 ± 0.041 | precision 0.884 | F2 0.929 | best {'subsample': 1.0, 'n_estimators': 400, 'min_child_weight': 1, 'max_depth': 2, 'learning_rate': 0.05, 'colsample_bytree': 1.0}
+2026-11-19 11:38:24 | INFO | CV  XGBoost       | SMOTE         |  30 candidates |   12.7 s | recall 0.936 ± 0.030 | precision 0.899 | F2 0.928 | best {'subsample': 0.85, 'n_estimators': 400, 'min_child_weight': 5, 'max_depth': 4, 'learning_rate': 0.03, 'colsample_bytree': 0.6}
+2026-11-19 11:38:24 | INFO | Best strategy per model (CV rule): {'SVM': 'Class weights', 'Random Forest': 'SMOTE', 'XGBoost': 'Class weights'}
+2026-11-19 11:38:24 | INFO | Final model (CV rule): XGBoost + Class weights
+2026-11-19 11:38:27 | INFO | TEST SVM           | None          | recall 0.943 (33/35) | precision 0.917 | specificity 0.992 | F2 0.938 | ROC-AUC 0.996 | AP 0.959
+2026-11-19 11:38:30 | INFO | TEST SVM           | Class weights | recall 0.943 (33/35) | precision 0.892 | specificity 0.990 | F2 0.932 | ROC-AUC 0.996 | AP 0.961
+2026-11-19 11:38:34 | INFO | TEST SVM           | SMOTE         | recall 0.914 (32/35) | precision 0.744 | specificity 0.972 | F2 0.874 | ROC-AUC 0.991 | AP 0.926
+2026-11-19 11:38:37 | INFO | TEST Random Forest | None          | recall 0.971 (34/35) | precision 0.944 | specificity 0.995 | F2 0.966 | ROC-AUC 0.999 | AP 0.993
+2026-11-19 11:38:40 | INFO | TEST Random Forest | Class weights | recall 0.943 (33/35) | precision 0.825 | specificity 0.982 | F2 0.917 | ROC-AUC 0.997 | AP 0.978
+2026-11-19 11:38:44 | INFO | TEST Random Forest | SMOTE         | recall 0.914 (32/35) | precision 0.889 | specificity 0.990 | F2 0.909 | ROC-AUC 0.998 | AP 0.981
+2026-11-19 11:38:47 | INFO | TEST XGBoost       | None          | recall 0.829 (29/35) | precision 1.000 | specificity 1.000 | F2 0.858 | ROC-AUC 1.000 | AP 0.996
+2026-11-19 11:38:50 | INFO | TEST XGBoost       | Class weights | recall 0.943 (33/35) | precision 0.971 | specificity 0.997 | F2 0.948 | ROC-AUC 1.000 | AP 0.997
+2026-11-19 11:38:53 | INFO | TEST XGBoost       | SMOTE         | recall 0.971 (34/35) | precision 0.919 | specificity 0.992 | F2 0.960 | ROC-AUC 0.999 | AP 0.994
+2026-11-19 11:38:55 | INFO | Top features (permutation, AP drop): ALTV 0.132, ASTV 0.131, Mean 0.055, Median 0.021, AC 0.014
+2026-11-19 11:38:55 | INFO | Floor 0.50 -> SVM + Class weights | CV recall 0.971 (136 TP) | precision 0.573 (105 FP)
+2026-11-19 11:38:55 | INFO | Floor 0.75 -> XGBoost + Class weights | CV recall 0.943 (132 TP) | precision 0.884 (18 FP)
+2026-11-19 11:38:56 | INFO | Missed test case: record 398 | probability 0.495 | 1 of 388 negatives score higher
+2026-11-19 11:38:56 | INFO | Missed test case: record 1762 | probability 0.407 | 3 of 388 negatives score higher
+2026-11-19 11:38:56 | INFO | Done in 3.8 min. Outputs written to results/, figures/ and models/
